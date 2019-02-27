@@ -1,0 +1,4 @@
+<div class="phx-hero">
+  <h2><%= @messager %></h2>
+  <a href="<%= Routes.hello_path(@conn, :index) %>">To the index Page!</a>
+</div>
