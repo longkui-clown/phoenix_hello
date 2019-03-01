@@ -1,8 +1,7 @@
-defmodule HelloWeb.UserSocket do
+defmodule HelloWeb.AdminSocket do
   use Phoenix.Socket
 
   # Channels
-  channel "room:*", HelloWeb.RoomChannel
   channel "foods:*", HelloWeb.FoodChannel
 
   # Socket params are passed from the client and can

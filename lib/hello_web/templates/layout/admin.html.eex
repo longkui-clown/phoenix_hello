@@ -1,0 +1,4 @@
+<span class="logo">"lalalalala"</span> <!-- remove this line -->
+<main role="main" class="container">
+  <%= render @view_module, @view_template, assigns %>
+</main>

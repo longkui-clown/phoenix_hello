@@ -8,8 +8,8 @@ use Mix.Config
 # with webpack to recompile .js and .css sources.
 config :hello, HelloWeb.Endpoint,
   http: [port: 80],
-  debug_errors: true,
-  code_reloader: true,
+  debug_errors: true,    # debug开关，关闭后报错转至404
+  code_reloader: true,    # 代码热更重加载页面
   check_origin: false,
   watchers: [
     node: [
@@ -19,7 +19,15 @@ config :hello, HelloWeb.Endpoint,
       "--watch-stdin",
       cd: Path.expand("../assets", __DIR__)
     ]
+  ],
+  https: [
+    port: 8080,
+    cipher_suite: :strong,
+    keyfile: "priv/cert/1874559_www.longkui.info.key",      # ssl安全证书， https
+    certfile: "priv/cert/1874559_www.longkui.info.pem"
   ]
+  # force_ssl: [rewrite_on: [:x_forwarded_proto], host: "localhost:8080"]       # 强制使用ssl，host为抓发的地址
+  # force_ssl: :hsts  # hsts 百度
 
 # ## SSL Support
 #

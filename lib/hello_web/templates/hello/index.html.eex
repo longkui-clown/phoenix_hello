@@ -1,4 +1,13 @@
 <div class="phx-hero">
   <h2>Hello World, from Phoenix!</h2>
   <a href="<%= Routes.hello_path(@conn, :show, :long) %>">To the long Page!</a>
+  <p><%= @message %></p>
+</div>
+
+<div class="phx-hero">
+  <h2><%= gettext("Welcome to %{name}!", name: "Phoenix") %></h2>
+  <p class="lead">A productive web framework that<br>does not compromise speed and maintainability.</p>
+  <p><a href="<%= Routes.hello_path(@conn, :show, 1111) %>">Link back to this page</a></p>
+  from function <%= message() %><br/>
+  I came from assigns: <%= @message %>
 </div>
