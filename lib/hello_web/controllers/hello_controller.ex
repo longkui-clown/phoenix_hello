@@ -76,13 +76,13 @@ defmodule HelloWeb.HelloController do
   def test_json_one(conn, _params) do
     page = %{title: "foo"}
     conn
-    |> render("one.json", page: page)
+    |> render("one.json", page: page) # 有问题，在view里面？？？？？？？？？
   end
 
   def test_json_many(conn, _params) do
     pages = [%{title: "foo"}, %{title: "bar"}]
     conn
-    |> render("many.json", pages: pages)
+    |> render("many.json", pages: pages)  # 有问题，在view里面？？？？？？？？？
   end
 
 end
